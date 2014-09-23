@@ -1,3 +1,9 @@
 .lock-waf*
 waflib/**/*.pyc
 build/
+GPATH
+GRTAGS
+GTAGS
+*~
+waflib/*.pyc
+

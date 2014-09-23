@@ -19,7 +19,8 @@ FLAVORS = {
     'mir-gl' : 'glmark2-mir',
     'mir-glesv2' : 'glmark2-es2-mir',
     'wayland-gl' : 'glmark2-wayland',
-    'wayland-glesv2' : 'glmark2-es2-wayland'
+    'wayland-glesv2' : 'glmark2-es2-wayland',
+	'fb-imx6-glesv2' : 'glmark2-es2-fb-imx6'
 }
 FLAVORS_STR = ", ".join(FLAVORS.keys())
 
@@ -94,7 +95,7 @@ def configure(ctx):
                       uselib = uselib, mandatory = True)
 
     # Check for a supported version of libpng
-    supp_png_pkgs = (('libpng12', '1.2'), ('libpng15', '1.5'),)
+    supp_png_pkgs = (('libpng12', '1.2'), ('libpng15', '1.5'), ('libpng16', '1.6'))
     have_png = False
     for (pkg, atleast) in supp_png_pkgs:
         try:
