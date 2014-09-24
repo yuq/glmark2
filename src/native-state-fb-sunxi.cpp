@@ -48,8 +48,8 @@ bool NativeStateFBSUNXI::create_window(WindowProperties const& properties)
 
 		properties_.width = vinfo.xres;
 		properties_.height = vinfo.yres;
-    }
-    else {
+	}
+	else {
 		properties_.width = properties.width;
 		properties_.height = properties.height;
     }
