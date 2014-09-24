@@ -26,11 +26,11 @@ bool NativeStateFBSUNXI::create_window(WindowProperties const& properties)
 		return true;
 
 	/* Set desired attributes */
-    properties_.fullscreen = properties.fullscreen;
-    properties_.visual_id = properties.visual_id;
+	properties_.fullscreen = properties.fullscreen;
+	properties_.visual_id = properties.visual_id;
 
-    if (properties_.fullscreen) {
-        /* Get the screen size */
+	if (properties_.fullscreen) {
+		/* Get the screen size */
 		int fd = open("/dev/fb0", O_RDONLY);
 		if (fd < 0) {
 			Log::error("Error: Failed to open fb to detect screen resolution!\n");
@@ -50,8 +50,8 @@ bool NativeStateFBSUNXI::create_window(WindowProperties const& properties)
 		properties_.height = vinfo.yres;
     }
     else {
-        properties_.width = properties.width;
-        properties_.height = properties.height;
+		properties_.width = properties.width;
+		properties_.height = properties.height;
     }
 
 	fbwin_.width = properties_.width;

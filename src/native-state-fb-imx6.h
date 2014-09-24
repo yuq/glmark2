@@ -12,12 +12,12 @@ public:
 	~NativeStateFBIMX6();
 
 	bool init_display();
-    void* display() { return (void *)fbdpy_; }
-    bool create_window(WindowProperties const& properties);
-    void* window(WindowProperties& properties);
-    void visible(bool v) { (void)v; }
-    bool should_quit() { return false; }
-    void flip() { }
+	void* display() { return (void *)fbdpy_; }
+	bool create_window(WindowProperties const& properties);
+	void* window(WindowProperties& properties);
+	void visible(bool v) { (void)v; }
+	bool should_quit() { return false; }
+	void flip() { }
 
 private:
 	EGLNativeDisplayType fbdpy_;

@@ -39,31 +39,31 @@ bool NativeStateFBIMX6::create_window(WindowProperties const& properties)
 	/* Recreate an existing window only if it has actually been resized */
 	if (fbwin_) {
 		if (properties_.fullscreen != properties.fullscreen ||
-            (properties.fullscreen == false &&
-             (properties_.width != properties.width ||
-              properties_.height != properties.height)))
+			(properties.fullscreen == false &&
+			 (properties_.width != properties.width ||
+			  properties_.height != properties.height)))
 		{
-            fbDestroyWindow(fbwin_);
-            fbwin_ = 0;
-        }
-        else
-        {
-            return true;
-        }
+			fbDestroyWindow(fbwin_);
+			fbwin_ = 0;
+		}
+		else
+		{
+			return true;
+		}
 	}
 
 	/* Set desired attributes */
-    properties_.fullscreen = properties.fullscreen;
-    properties_.visual_id = properties.visual_id;
+	properties_.fullscreen = properties.fullscreen;
+	properties_.visual_id = properties.visual_id;
 
-    if (properties_.fullscreen) {
-        /* Get the screen size */
+	if (properties_.fullscreen) {
+		/* Get the screen size */
 		fbGetDisplayGeometry(fbdpy_, &properties_.width, &properties_.height);
-    }
-    else {
-        properties_.width = properties.width;
-        properties_.height = properties.height;
-    }
+	}
+	else {
+		properties_.width = properties.width;
+		properties_.height = properties.height;
+	}
 
 	fbwin_ = fbCreateWindow(fbdpy_, 0, 0, properties_.width, properties_.height);
 	if (!fbwin_) {

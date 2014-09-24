@@ -173,9 +173,9 @@ main(int argc, char *argv[])
 #elif GLMARK2_USE_WAYLAND
     NativeStateWayland native_state;
 #elif GLMARK2_USE_FB_IMX6
-	NativeStateFBIMX6 native_state;
+    NativeStateFBIMX6 native_state;
 #elif GLMARK2_USE_FB_SUNXI
-	NativeStateFBSUNXI native_state;
+    NativeStateFBSUNXI native_state;
 #endif
 
 #if GLMARK2_USE_EGL
