@@ -44,6 +44,8 @@
 #include "native-state-wayland.h"
 #elif GLMARK2_USE_FB_IMX6
 #include "native-state-fb-imx6.h"
+#elif GLMARK2_USE_FB_SUNXI
+#include "native-state-fb-sunxi.h"
 #endif
 
 #if GLMARK2_USE_EGL
@@ -172,6 +174,8 @@ main(int argc, char *argv[])
     NativeStateWayland native_state;
 #elif GLMARK2_USE_FB_IMX6
 	NativeStateFBIMX6 native_state;
+#elif GLMARK2_USE_FB_SUNXI
+	NativeStateFBSUNXI native_state;
 #endif
 
 #if GLMARK2_USE_EGL
